@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    
+		<script type="text/javascript">
+			var image1=new Image()
+			image1.src="gallery-img1.jpg"
+				
+			var image2=new Image()
+			image2.src="gallery-img2.jpg"
+				
+			var image3=new Image()
+			image3.src="gallery-img3.jpg"
+				
+			var image4=new Image()
+			image4.src="gallery-img4.jpg"
+				
+			var image5=new Image()
+			image5.src="gallery-img5.jpg"
+				
+			var image6=new Image()
+			image6.src="gallery-img6.jpg"
+		</script>
+		
+        <title>Able2Learn</title>
+           </head>
+           
+    <body>
+			    	<!-- This is the ad at the top of the page -->
+    	<!--<div id="outer" style="width:100%">  
+			<div id="inner">
+				<div id="ad">
+   					<img id="adimg" src="samplead.jpg"/>
+    			</div>
+    		</div>
+		</div>-->
+		<section id="hold">
+		<!-- Eventually put this into a fixed formet-->
+		<div id="header">
+			<img id="logo" src="Logoable.gif"/>
+			<div id="line"></div>
+			
+			
+			<div  id="navbar">
+				<ul>
+					<li>Shop</li>
+					<li>Videos</li>
+					<li>Flashcards</li>
+					<li>Community</li>
+					<li>Blogs and Guide</li>
+					<li>Programs</li>
+				</ul>
+			</div>
+			</div>
+			
+		<div id="sidebar">
+			<p id="title">COMMUNITY</p>
+			
+			<!--These are the white lines that are seen in the sidebar-->
+		
+			<ul>
+				<li class="bigline"></li>
+				<li class="litline"></li>
+			
+			</ul>
+			
+			<p class="sidetext">Featured Blogs</p>
+			
+			<!--These are the white lines that are seen in the sidebar-->
+		
+			<ul>
+				<li class="bigline"></li>
+			</ul>
+			
+			<img class="apple" src="sideimg.jpeg"/>
+			
+			<ul>
+				<li class="bigline"></li>
+			</ul>
+			
+			<p class="sidetext">Featured Videos</p>
+			
+			<!--These are the white lines that are seen in the sidebar-->
+			<ul>
+				<li class="bigline"></li>
+			</ul>
+			
+			<img class="apple" src="vid.png"/>
+			
+			<div style="height: 15px;"></div>
+			<ul>
+				<li class="bigline"></li>
+				<li class="litline"></li>
+			
+			</ul>			
+		</div>
+		<!--Sidebar finished here-->
+		
+		<div id="banner"></div>
+		
+		<div id="contactus">
+			<ul>
+				<li><img class="cont" id="mail" src="mail.png"></li>
+				<li><img class="cont" id="twit" src="twit.png"></li>
+				<li><img class="cont" id="tube" src="tube.png"></li>
+				<li><img class="cont" id="pin" src="pin.png"></li>
+				<li><img class="cont" id="fb" src="fb.png"></li>
+			</ul>
+		</div>
+		
+		<div width="46.5%"> <img id="idimg" align:"middle" src="boxingring.png" name="slide"  height=auto></div>
+		
+		<script type="text/javascript">
+					//<!--
+					var step=1
+					function slideit(){
+					document.images.slide.src=eval("image"+step+".src")
+					if(step<6)
+					step++
+					else
+					step=1
+					setTimeout("slideit()",3500)
+					}
+					slideit()
+					//-->
+			</script>
+			
+			
+		<div id="adbanner">
+			<ul>
+				<li style="margin-top: 15px;"><img class="adverts"  src="ad1.jpg"></li>
+				<li style="padding-top: -50px;"><img style="height: 300px;"class="adverts"  src="ad2.jpg"></li>
+			</ul>
+		</div>
+		
+		<div id="recipe"><span style="color: #d8eddc">----</span>New recipe ideas?
+			<div id="whitecon">h</div> 
+				<div id="enter">Enter</div>
+		</div>
+		<div id="video"><img id="play" src="playbutt.gif"/><div id="watch">Watch Our Video</div></div>
+		
+		
+		</section>
+		<table id ="pics">
+			<tr>
+				<td><img class="pictures" src="cereal with word.jpg"/></td>
+				<td><img class="pictures" src="pizza natural environment w.jpg"/></td>
+				<td><img class="pictures" src="sandwich w.jpg"/></td>
+			</tr>
+			<tr>
+				<td><img class="pictures" src="soup natural environment w.jpg"/></td>
+				<td><img class="pictures" src="juice w.jpg"/></td>
+				<td><img class="pictures" src="cake natural environment w.jpg"/></td>
+			</tr>
+			<tr>
+				<td><img class="pictures" src="apples natural environment 1 w.jpg"/></td>
+				<td><img class="pictures" src="dressing w.jpg"/></td>
+				<td><img class="pictures" src="Food-safety-hygiene-training1.jpg"/></td>
+			</tr>
+		</table>
+    </body>
+</html>
+
+<style>
+#inner {
+    display: table;
+    margin: -10px auto;
+}
+
+#adimg {
+	height: 80px;
+	width: 700px;
+}
+
+#header {
+	height: 110px;
+	width: 90%;
+	background-color: #d4ecf8;
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	min-width: 90%;
+}
+#head{
+	float: top;
+}
+#logo {
+	height: 65px;
+	width: auto;
+   position: absolute;
+   top: 50%;
+   margin-top: -40px;
+   margin-left: 20px;
+}
+
+#line {
+	height: 3px;
+	width: 65%;
+	background-color: #58585a;
+	display: inline-table;
+	/*position: absolute;*/
+	margin: 4% auto auto 33%;
+	/*margin: 60px auto auto 400px;*/
+	
+}
+
+li {
+	list-style-type:none;
+	font-family: cambria;
+}
+
+#navbar ul {
+	/*position: absolute;
+ 	margin: 0% auto auto 15%;
+	min-width: 900px;*/
+	margin-right: 2%;
+	}
+ 
+#navbar ul li {  
+	margin-top: -3%;
+	float: right;
+	padding: 1.7%;
+	font-family: cambria;
+} 
+	
+#navbar ul li a { 
+	text-decoration: none;
+	color: black;
+	
+	font: 200%;
+}
+	
+#navbar ul > li {
+	color: #58585a;
+	font-size: 21px;
+}
+
+#sidebar {
+	height: 540px;
+	width: 19%;
+	background-color: #d8eddc;
+	margin-top: 20px;
+	margin-left: 5%;
+	position: relative;
+}
+
+#title {
+	font-family: futura;
+	text-align: center;
+	font-size: 22px;
+	color: #58585a;
+	padding-top: 15px;
+}
+.bigline {
+	width: 204px;
+	height: 3px;
+	background-color: #ffffff;
+	margin-left: -10%;
+	margin-top: -7px;
+}
+.litline {
+	width: 170px;
+	height: 2px;
+	background-color: #ffffff;
+	margin-left: -2%;
+	margin-top: 2px;
+}
+.sidetext {
+	font-family: cambria;
+	text-align: left;
+	font-size: 20px;
+	color: #58585a;
+	margin-left: 25px;
+}
+
+.apple {
+	width: 204px;
+	height: auto;
+	margin-left: 8%;
+}
+#banner {
+	width: 46%;
+	height: 7%;
+	background-color: #b2dff6;
+	position: absolute;
+	margin-top: -540px;
+	margin-left: 25.3%;
+	
+}
+
+.cont {
+	height: 42px;
+	width: 42px;
+}
+#contactus ul {
+	position:relative;
+	margin: -42.9% 5% auto auto;
+	min-width: 900px;
+}
+
+#contactus ul li {  
+	float: right;
+	opacity: 8;
+	margin-left: 0px;
+	background-color: #fbdfeb;
+	padding: 4px 6px 4px 6px;
+}
+
+#idimg {
+	margin: 6% auto auto 25.7%;
+	width: 46.4%;
+	height: 400px;
+}
+
+#adbanner ul {
+	position:relative;
+	min-width: 900px;
+	margin-top: -34%;
+	margin-left: -12.5%;
+}
+
+#adbanner ul li {
+	margin-left: 76%;
+	display:block;
+} 
+.adverts {
+	width: 81.2%;
+	height: 300px;
+}
+#recipe {
+	margin-top: -10%;
+	background-color: #d8eddc;
+	width: 19%;
+	font-family: cambria;
+	text-align: left;
+	font-size: 18px;
+	color: #58585a;
+	margin-left: 5%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#whitecon {
+	background-color: white;
+	width: 80%;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+}
+#enter {
+	background-color: #addab9;
+	width: 18%;
+	padding: 2px 13px 2px 13px;
+	opacity: 2;
+	color: #ffffff;
+	margin-left: 60%;
+	margin-top: 10px;
+	font-family: cambria;
+}
+
+#video {
+	background-color: #d4ecf8;
+	width: 46.4%;
+	height: 176px;
+	margin: -14% auto auto 25.7%;
+}
+#play {
+	width: 70px;
+	margin: 7% auto auto 5%;
+}
+#watch {
+	padding-left: 2%;
+	font-size: 23px;
+	font-family: futura;
+	margin-top: 3%;
+}
+#pics {
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 5px solid #c8e9fa;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.pictures {
+	width: 350px;
+	margin: 2px 4px 2px 4px;
+}
+</style>

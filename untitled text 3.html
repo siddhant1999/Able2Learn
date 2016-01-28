@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title></title>
+<style type="text/css">
+/*<![CDATA[*/
+.thumb {
+  position:relative;left:100px;height:300px;
+}
+
+#SS {
+  position:relative;left:400px;top:100px;width:300px;height:320px;border:solid red 1px;
+}
+
+/*]]>*/
+</style></head>
+
+<body>
+<input type="button" name="" value="Next" onmouseup="Slideshow.next('SS',1);" />
+<input type="button" name="" value="Back" onmouseup="Slideshow.next('SS',-1);" />
+ <div id="SS" >
+  <img src="http://www.auntnini.com/sketch/143/IL143A.jpg" class="thumb" />
+  <br />
+  <img src="http://www.auntnini.com/sketch/143/IL143.jpg" class="thumb" />
+  <br />
+  <img src="http://www.auntnini.com/sketch/143/head.jpg" class="thumb" />
+  <br />
+  <img src="http://www.auntnini.com/sketch/143/IL143B.jpg" class="thumb" />
+ </div>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+
+var Slideshow={
+
+ init:function(id){
+  var obj=document.getElementById(id),imgs=obj.getElementsByTagName('IMG'),z0=0,clone;
+  Slideshow[id]={};
+  Slideshow[id].obj=obj;
+  Slideshow[id].ary=[];
+  Slideshow[id].cnt=0;
+  for (;z0<imgs.length;z0++){
+   imgs[z0].style.position='absolute';
+   imgs[z0].style.left=(z0>0?-3000:(obj.offsetWidth-imgs[z0].width)/2)+'px';
+   imgs[z0].style.top=(obj.offsetHeight-imgs[z0].height)/2+'px';
+   clone=document.createElement('IMG');
+   clone.src=imgs[z0].src;
+   clone.style.position='absolute';
+   clone.style.zIndex='101';
+   clone.style.left='-3000px';
+   document.body.appendChild(clone);
+   Slideshow[id].ary[z0]=[imgs[z0],clone];
+   Slideshow.addevt(imgs[z0],'mouseover','pop',id,z0);
+   Slideshow.addevt(clone,'mouseout','hide');
+  }
+  Slideshow.addevt(document,'keyup','keycode',id);
+  Slideshow.lst=clone;
+
+ },
+
+ next:function(id,ud){
+  Slideshow.hide();
+  var oop=Slideshow[id],obj=oop.obj,cnt=oop.cnt+ud,lgth=oop.ary.length-1,img;
+  oop.ary[oop.cnt][0].style.left='-3000px';
+  cnt=cnt<0?lgth:cnt==lgth?0:cnt;
+  img=oop.ary[cnt][0];
+  img.style.left=(obj.offsetWidth-img.width)/2+'px';
+  img.style.top=(obj.offsetHeight-img.height)/2+'px';
+  oop.cnt=cnt;
+ },
+
+ keycode:function(id,nu,e){
+  Slideshow.hide();
+  var kk;
+  if (e.which){
+   kk=e.which;
+  }
+  else {
+   kk=e.keyCode;
+  }
+  if (kk==37||kk==39){
+   Slideshow.next(id,kk==37?-1:1);
+  }
+ },
+
+ pop:function(id,nu){
+  Slideshow.hide();
+  var oop=Slideshow[id],pos=Slideshow.pos(oop.obj),clone=oop.ary[nu][1];
+  clone.style.left=(oop.obj.offsetWidth-clone.width)/2+pos[0]+'px';
+  clone.style.top=(oop.obj.offsetHeight-clone.height)/2+pos[1]+'px';
+  Slideshow.lst=clone;
+ },
+
+ hide:function(){
+  Slideshow.lst.style.left='-3000px';
+ },
+
+ pos:function(obj){
+  var rtn=[0,0];
+  while(obj){
+   rtn[0]+=obj.offsetLeft;
+   rtn[1]+=obj.offsetTop;
+   obj=obj.offsetParent;
+  }
+  return rtn;
+ },
+
+ addevt:function(o,t,f,id,p){
+  if (o.addEventListener) o.addEventListener(t,function(e){ return Slideshow[f](id,p,e);}, false);
+  else if (o.attachEvent) o.attachEvent('on'+t,function(e){ return Slideshow[f](id,p,e); });
+ }
+}
+
+Slideshow.init('SS')
+/*]]>*/
+</script></body>
+
+</html>
